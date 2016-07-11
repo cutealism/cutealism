@@ -5,7 +5,10 @@ body {
 }
 
 img {
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 h1 {
