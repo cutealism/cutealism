@@ -1,0 +1,14 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #FF2;
+}
+
+img {
+    width: 25%;
+    image-rendering: pixelated;
+}
+
+.title {
+    width: 100%;
+}
