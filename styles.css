@@ -5,10 +5,72 @@ body {
 }
 
 img {
-    width: 25%;
     image-rendering: pixelated;
 }
 
-.title {
+h1 {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 img {
+    width: 100%;
+    max-width: 800px;
+}
+
+a {
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    z-index: 1;
+}
+
+a .main-img {
+    height: 30vh;
+    max-width: 100%;
+}
+
+.art-links,.about {
+    width: 100%;
+    text-align: center;
+}
+.art-links a {
+    width: 50%;
+}
+
+.secondary-img {
+    position: absolute;
+}
+
+.confetti {
+    top: -3vh;
+    right: 20%;
+    height: 11vh;
+}
+
+.full-heart {
+    bottom: 2vh;
+    left: 20%;
+    height: 15vh;
+}
+
+.heartdot {
+    top: 2vh;
+    left: 1%;
+    height: 15vh;
+}
+
+.boxes {
+    right: 10px;
+    bottom: 10px;
+    height: 30vh;
+}
+
+.stars {
+    left: 19%;
+    bottom: 12vh;
+    height: 18vh;
 }
