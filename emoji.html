@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>Cutealism - Emoji Pack</title>
-    <meta property="og:image"       name="og:image" content="{{ site.url }}/gifs/cutealism-emojis.gif">
-    <meta property="twitter:image"       name="twitter:image"  content="{{ site.url }}/gifs/cutealism-emojis.gif">
+    <meta property="og:image"       name="og:image" content="{{ site.url }}/images/cutealism-emoji.png">
+    <meta property="twitter:image"       name="twitter:image"  content="{{ site.url }}/images/cutealism-emoji.png">
 
     <style type="text/css">
         body {
@@ -39,6 +39,51 @@
         section a {
             text-decoration: none;
         }
+        .name {
+            text-decoration: none;
+            background: black;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            margin: auto;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            white-space: nowrap;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+
+            width: 120px;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+        }
+        .tooltip:hover .tooltiptext, .tooltip:focus .tooltiptext {
+          visibility: visible;
+          outline: none;
+        }
+        .tooltip .tooltiptext::after {
+            content: " ";
+            position: absolute;
+            top: 100%; /* At the bottom of the tooltip */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
     </style>
 </head>
 <body>
@@ -51,8 +96,11 @@
     <section>
         {% for image in site.static_files %}
             {% if image.path contains 'gifs/emoji' %}
-            <a href="{{ site.baseurl }}{{ image.path }}" download>
-                <img width="64px" src="{{ site.baseurl }}{{ image.path }}" alt="{{image.name}} emoji" />
+            <a class="tooltip" href="{{ site.baseurl }}{{ image.path }}" download>
+                <span class="tooltiptext">
+                    <span class="name">:{{image.basename}}:</span>
+                </span>
+                <img width="64px" src="{{ site.baseurl }}{{ image.path }}" alt="{{image.slug}} emoji" />
             </a>
             {% endif %}
         {% endfor %}
