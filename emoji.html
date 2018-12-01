@@ -1,10 +1,12 @@
+---
+---
 <!DOCTYPE html>
 <html>
 <head>
     <title>Cutealism - Emoji Pack</title>
     <style type="text/css">
         body {
-            background: #FF2;
+            background: #FFFD42;
             font-family: monospace;
             text-align: center;
         }
@@ -18,19 +20,47 @@
             -ms-interpolation-mode: nearest-neighbor;
             vertical-align: middle;
         }
-        .main-img {
-            width: 200px;
+        h1 {
+            margin-bottom: 32px;
         }
-        h2 {
-            margin-bottom: 0;
+        .home {
+            margin-top: 64px;
         }
-        p {
-            margin-bottom: 50px;
+        section {
+            background: white;
+            border-radius: 10px;
+            max-width: 450px;
+            padding: 32px;
+            margin: auto;
+        }
+        section a {
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <h1>Cutealism Slack Emoji Pack</h1>
-    <a href="/">Home</a>
+
+    <p>
+        Click to download each, or
+        <a href="{{ site.baseurl }}/cutealism-emoji.zip" download>download the whole set.</a>
+    </p>
+    <section>
+        {% for image in site.static_files %}
+            {% if image.path contains 'gifs/emoji' %}
+            <a href="{{ site.baseurl }}{{ image.path }}" download>
+                <img width="64px" src="{{ site.baseurl }}{{ image.path }}" alt="{{image.name}} emoji" />
+            </a>
+            {% endif %}
+        {% endfor %}
+    </section>
+    <p>
+        To install in Slack, use
+        <a href="https://chrome.google.com/webstore/detail/neutral-face-emoji-tools/anchoacphlfbdomdlomnbbfhcmcdmjej">Neutral Face Emoji's Bulk upload Chrome extension</a>.
+    </p>
+
+    <p class="home">
+        <a href="/">Home</a>
+    </p>
 </body>
 </html>
