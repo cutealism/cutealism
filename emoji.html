@@ -97,11 +97,11 @@
     <section>
         {% for image in site.static_files %}
             {% if image.path contains 'gifs/emoji' %}
-            <a class="tooltip" href="{{ image.path }}" download>
+            <a class="tooltip" href="/{{ site.baseurl }}/{{ image.path }}" download>
                 <span class="tooltiptext">
                     <span class="name">:{{image.basename}}:</span>
                 </span>
-                <img width="64px" src="{{ image.path }}" alt="{{image.slug}} emoji" />
+                <img width="64px" src="/{{ site.baseurl }}/{{ image.path }}" alt="{{image.basename}} emoji" />
             </a>
             {% endif %}
         {% endfor %}
