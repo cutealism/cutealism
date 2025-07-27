@@ -5,8 +5,8 @@
 <head>
     <title>Cutealism - Emoji Pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image"       name="og:image" content="{{ site.url }}/images/cutealism-emoji.png">
-    <meta property="twitter:image"       name="twitter:image"  content="{{ site.url }}/images/cutealism-emoji.png">
+    <meta property="og:image"       name="og:image" content="{{ site.baseurl }}/images/cutealism-emoji.png">
+    <meta property="twitter:image"       name="twitter:image"  content="{{ site.baseurl }}/images/cutealism-emoji.png">
 
     <style type="text/css">
         body {
@@ -92,7 +92,7 @@
 
     <p>
         Click to download each, or
-        <a href="/cutealism-emoji.zip" download>download the whole set.</a>
+        <a href="/{{ site.baseurl }}/cutealism-emoji.zip" download>download the whole set.</a>
     </p>
     <section>
         {% for image in site.static_files %}
